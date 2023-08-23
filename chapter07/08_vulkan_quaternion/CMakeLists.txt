@@ -66,7 +66,7 @@ add_dependencies(Main Shaders)
 add_custom_command(TARGET Shaders POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy_directory
   "$<TARGET_PROPERTY:Main,SOURCE_DIR>/shader"
-  "$<TARGET_PROPERTY:Main,BINARY_DIR>/$<CONFIGURATION>/shader"
+  "$<TARGET_PROPERTY:Main,BINARY_DIR>/shader"
 )
 
 # copy textures
@@ -83,7 +83,7 @@ add_dependencies(Main Textures)
 add_custom_command(TARGET Textures POST_BUILD
   COMMAND ${CMAKE_COMMAND} -E copy_directory
   "$<TARGET_PROPERTY:Main,SOURCE_DIR>/textures"
-  "$<TARGET_PROPERTY:Main,BINARY_DIR>/$<CONFIGURATION>/textures"
+  "$<TARGET_PROPERTY:Main,BINARY_DIR>/textures"
 )
 
 # variable is set by FindGLFW3.cmake, reuse for Linux
